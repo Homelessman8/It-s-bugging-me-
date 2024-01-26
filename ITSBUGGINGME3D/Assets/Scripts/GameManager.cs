@@ -32,6 +32,12 @@ public class GameManager : MonoBehaviour
 
     }
 
+    //Spawn Enemy Randomly around the environment
+    private void CreateEnemy()
+    {
+
+    }
+
     public void Pause()
     {
         Debug.Log("Paused");
