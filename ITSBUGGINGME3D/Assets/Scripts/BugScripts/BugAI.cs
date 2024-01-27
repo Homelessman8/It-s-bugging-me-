@@ -4,8 +4,12 @@ using UnityEngine;
 using Unity.AI;
 using UnityEngine.AI;
 
+
 public class BugAI : MonoBehaviour
 {
+    //Reference HighScore script
+    public HighScore health;
+
     NavMeshAgent agent;
     [SerializeField]
     //Where we want the AI to go
@@ -28,6 +32,13 @@ public class BugAI : MonoBehaviour
         if(agent.remainingDistance <= agent.stoppingDistance)
         {
             Destroy(this.gameObject);
+            //Decrease health point by 1
+            health.Healthpoint = health.Healthpoint - 1;
+            //Prevent health from going below zero
+            if (health.Healthpoint < 0) 
+            {
+                health.Healthpoint = 0;
+            }
         }
     }
     
