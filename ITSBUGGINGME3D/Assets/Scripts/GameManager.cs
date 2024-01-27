@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
     public void UnPause()
     {
         Debug.Log("Back to Game");
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         gamePauseMenu.SetActive(false);
         //Add setActive.false pause menu panel
