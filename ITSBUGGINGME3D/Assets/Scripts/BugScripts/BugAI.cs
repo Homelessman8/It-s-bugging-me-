@@ -6,6 +6,13 @@ using UnityEngine.AI;
 using System.IO;
 using Unity.VisualScripting;
 
+public enum bugType
+{
+    Cockcroah,
+    Spider,
+    Snail
+}
+
 public class BugAI : MonoBehaviour
 {
     NavMeshAgent agent;
@@ -13,13 +20,17 @@ public class BugAI : MonoBehaviour
     //Where we want the AI to go
     GameObject target;
     Vector3 randomPosition;
-    int randomNumber;
+    public bugType bug;
     private List<int> validNumbers = new List<int> { 1, 4, 8,};
+    [SerializeField]
+    GameObject[] greenSplats;
+    [SerializeField]
+    GameObject[] yellowSplats;
+    [SerializeField]
+    GameObject[] orangeSplats;
 
-    [SerializeField]
-    AnimationCurve rotationLength;
+
     bool randomActive;
-    [SerializeField]
     //Set the nav agent component
     //Set the end position as destinatino (it will start to move there)
     void Start()
@@ -88,5 +99,24 @@ public class BugAI : MonoBehaviour
         yield return new WaitForSeconds(3);
         randomActive = false;
         agent.SetDestination(target.transform.position);
+    }
+
+    void OnDestroy()
+    {
+        switch(bug)
+        {
+            case bugType.Cockcroah:
+            Instantiate(orangeSplats[Random.Range(0, 1)], transform.position + transform.up * 0.1f, transform.rotation);
+            break;
+
+            case bugType.Spider:
+            Instantiate(greenSplats[Random.Range(0, 1)], transform.position + transform.up * 0.1f, transform.rotation);
+            break;
+
+            case bugType.Snail:
+            Instantiate(yellowSplats[Random.Range(0, 1)], transform.position + transform.up * 0.1f, transform.rotation);
+            break;
+        }
+        Destroy(this.gameObject);
     }
 }
