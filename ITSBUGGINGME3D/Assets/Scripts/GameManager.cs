@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
 {
     //Variables
     [Header("Game Entities")]
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject enemyPrefab0;
+    [SerializeField] private GameObject enemyPrefab1;
+    //[SerializeField] private GameObject enemyPrefab2;
     [SerializeField] private Transform[] spawnPositions;
 
 
@@ -113,11 +115,19 @@ public class GameManager : MonoBehaviour
     //Spawn Enemy Randomly around the environment
     private void CreateEnemy()
     {
-        //Melee
-        bug = Instantiate(enemyPrefab);
+        //Cockroach
+        bug = Instantiate(enemyPrefab0);
         bug.transform.position = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length)].position;
-       // bug.GetComponent<Enemy>().weapon = meleeWeapon;
-        //bug.GetComponent<MeleeEnemy>().SetMeleeEnemy(2, 0.25f);
+        
+
+        //Spider
+        bug = Instantiate(enemyPrefab1);
+        bug.transform.position = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length)].position;
+
+
+        ////another bug
+        //bug = Instantiate(enemyPrefab2);
+        //bug.transform.position = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length)].position;
     }
 
     private void Update()

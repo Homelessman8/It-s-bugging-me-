@@ -10,7 +10,7 @@ public class HighScore : MonoBehaviour
     private NewBehaviourScript player;
 
     //Referencing the Game manager script 
-    public GameManagerScript gameManager;
+    public GameManager gameManager;
 
     //Reference to the text
     public TextMeshProUGUI ScoreText;
@@ -50,9 +50,9 @@ public class HighScore : MonoBehaviour
     void Update()
     {
         Highscore = PlayerPrefs.GetFloat("Highscore");
-        HighScoreText.text = "High Score: " + Highscore.ToString();
-        ScoreText.text = "Score: " + Score.ToString();
-        Health.text = "Health: " + Healthpoint.ToString();  
+        HighScoreText.text = /*"High Score: " +*/ Highscore.ToString();
+        ScoreText.text = /*"Score: " +*/ Score.ToString();
+        Health.text = /*"Health: " +*/ Healthpoint.ToString();  
 
         //If the player is dead, save high score
         //if (player == null) 
@@ -66,7 +66,7 @@ public class HighScore : MonoBehaviour
             //Activate player death, only enabled once 
             isDead = true;
             //Then transition to GAME OVER scene
-            gameManager.gameOver();
+            gameManager.GameOver();
         }
 
     }
