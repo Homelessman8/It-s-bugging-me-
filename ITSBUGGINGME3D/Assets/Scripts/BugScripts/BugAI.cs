@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.AI;
 using UnityEngine.AI;
+using System.IO;
+using Unity.VisualScripting;
 
 
 public class BugAI : MonoBehaviour
@@ -14,9 +16,14 @@ public class BugAI : MonoBehaviour
     [SerializeField]
     //Where we want the AI to go
     GameObject target;
+    Vector3 randomPosition;
+    int randomNumber;
+    private List<int> validNumbers = new List<int> { 1, 4, 8,};
+
     [SerializeField]
     AnimationCurve rotationLength;
-
+    bool randomActive;
+    [SerializeField]
     //Set the nav agent component
     //Set the end position as destinatino (it will start to move there)
     void Start()
@@ -24,13 +31,14 @@ public class BugAI : MonoBehaviour
         health = GameObject.Find("ScoreManager").GetComponent<HighScore>();
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(target.transform.position);
+        StartCoroutine(RandomMovement());
     }
 
     //Update is called once per frame
     void Update()
     {
         //When AI is stopped, destroy self.
-        if(agent.remainingDistance <= agent.stoppingDistance)
+        if(agent.remainingDistance <= agent.stoppingDistance && !randomActive)
         {
             Destroy(this.gameObject);
             //Decrease health point by 1
@@ -40,6 +48,20 @@ public class BugAI : MonoBehaviour
             {
                 health.Healthpoint = 0;
             }
+        }
+        else if(agent.remainingDistance <= agent.stoppingDistance && randomActive)
+        {
+            randomActive = false;
+            agent.SetDestination(target.transform.position);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        var randomNumber = Random.Range(1, 100);
+         if (validNumbers.Contains(randomNumber) && !randomActive)
+        {
+            StartCoroutine(RandomMovement());
         }
     }
     
@@ -67,5 +89,16 @@ public class BugAI : MonoBehaviour
         {
             line.SetPosition( i, path.corners[ i ] );
         }
+    }
+
+    private IEnumerator RandomMovement()
+    {
+        randomActive = true;
+        float randomOffset = Random.Range(-4, 4);
+        randomPosition = gameObject.transform.position + transform.forward * 2 + transform.right * randomOffset;
+        agent.SetDestination(randomPosition);
+        yield return new WaitForSeconds(3);
+        randomActive = false;
+        agent.SetDestination(target.transform.position);
     }
 }
