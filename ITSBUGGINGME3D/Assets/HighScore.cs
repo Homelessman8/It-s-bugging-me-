@@ -17,6 +17,10 @@ public class HighScore : MonoBehaviour
     public TextMeshProUGUI HighScoreText;
     public float Highscore;
 
+    //player health
+    public TextMeshProUGUI Health;
+    public float Healthpoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,11 +41,16 @@ public class HighScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HighScoreText.text = Highscore.ToString();
-        ScoreText.text = Score.ToString();
+        HighScoreText.text = "High Score: " + Highscore.ToString();
+        ScoreText.text = "Score: " + Score.ToString();
+        Health.text = "Health: " + Healthpoint.ToString();  
 
         //If the player is dead, save high score
-        if (player == null) 
+        //if (player == null) 
+        //{
+        //    SaveHighScore();
+        //}
+        if (Healthpoint <= 0) 
         {
             SaveHighScore();
         }
