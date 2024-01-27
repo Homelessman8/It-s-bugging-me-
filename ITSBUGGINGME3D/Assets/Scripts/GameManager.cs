@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
                 break;
 
 
+
         }
     }
 
@@ -158,6 +159,7 @@ public class GameManager : MonoBehaviour
 
         //Add setActive.true pause menu panel
         gamePauseMenu.SetActive(true);
+
     }
 
 
@@ -181,6 +183,7 @@ public class GameManager : MonoBehaviour
         //SetActive.true 
         Debug.Log("You Lose, Game Over");
         ChangeState(State.GameOverExit);
+        Time.timeScale = 0;
     }
 
     private void GameOverExit()
@@ -189,6 +192,14 @@ public class GameManager : MonoBehaviour
         gameOverMenu.SetActive(true);
         //timerText.gameObject.SetActive(false);
         gamePauseMenu = null;
+    }
+
+    public void ExitMenu(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+        Time.timeScale = 1;
+        gameOverMenu.SetActive(false);
+        gamePauseMenu.SetActive(false);
     }
 
     public enum State
@@ -202,5 +213,6 @@ public class GameManager : MonoBehaviour
         RestartLevel,
         GameOver,
         GameOverExit,
+        ExitMenu
     }
 }
