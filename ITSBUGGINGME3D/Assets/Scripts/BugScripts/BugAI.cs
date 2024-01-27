@@ -15,14 +15,12 @@ public enum bugType
 
 public class BugAI : MonoBehaviour
 {
-
     //Reference HighScore script
     public HighScore health;
-
     NavMeshAgent agent;
     [SerializeField]
     //Where we want the AI to go
-    GameObject target;
+    Transform target;
     Vector3 randomPosition;
     public bugType bug;
     private List<int> validNumbers = new List<int> { 1, 4, 8,};
@@ -40,6 +38,7 @@ public class BugAI : MonoBehaviour
     void Start()
     {
         health = GameObject.Find("ScoreManager").GetComponent<HighScore>();
+        target = GameObject.Find("Destroyer").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(target.transform.position);
         StartCoroutine(RandomMovement());
@@ -51,25 +50,19 @@ public class BugAI : MonoBehaviour
         //When AI is stopped, destroy self.
         if(agent.remainingDistance <= agent.stoppingDistance && !randomActive)
         {
+            health.Healthpoint = health.Healthpoint - 1;
+
+            //Prevent health from going below zero
+            if (health.Healthpoint < 0)
+            {
+                health.Healthpoint = 0;
+            }
             Destroy(this.gameObject);
         }
         else if(agent.remainingDistance <= agent.stoppingDistance && randomActive)
         {
             randomActive = false;
             agent.SetDestination(target.transform.position);
-        }
-
-        //When AI is stopped, destroy self.
-        if (agent.remainingDistance <= agent.stoppingDistance)
-        {
-            Destroy(this.gameObject);
-            //Decrease health point by 1
-            health.Healthpoint = health.Healthpoint - 1;
-            //Prevent health from going below zero
-            if (health.Healthpoint < 0)
-            {
-                health.Healthpoint = 0;
-            }
         }
     }
 
@@ -135,6 +128,6 @@ public class BugAI : MonoBehaviour
             Instantiate(yellowSplats[Random.Range(0, 1)], transform.position + transform.up * 0.1f, transform.rotation);
             break;
         }
-        Destroy(this.gameObject);
+
     }
 }
