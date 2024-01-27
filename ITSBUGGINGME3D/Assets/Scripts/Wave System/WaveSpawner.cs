@@ -45,7 +45,7 @@ public class WaveSpawner : MonoBehaviour
         if (waves[currentWaveIndex].enemiesLeft == 0)
         {
             readyToCountDown = true;
-
+            Debug.Log("NEXT WAVE INCOMING!");
             currentWaveIndex++;
         }
     }
@@ -55,8 +55,8 @@ public class WaveSpawner : MonoBehaviour
         {
             for (int i = 0; i < waves[currentWaveIndex].enemies.Length; i++)
             {
-                Enemy enemy = Instantiate(waves[currentWaveIndex].enemies[i], spawnPoint.transform);
-
+                Enemy enemy = Instantiate(waves[currentWaveIndex].enemies[i], spawnPoint.transform.position, spawnPoint.transform.rotation);
+                waves[currentWaveIndex].enemiesLeft -= 1;
                 enemy.transform.SetParent(spawnPoint.transform);
 
                 yield return new WaitForSeconds(waves[currentWaveIndex].timeToNextEnemy);

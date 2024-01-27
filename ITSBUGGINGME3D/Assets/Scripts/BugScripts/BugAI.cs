@@ -125,10 +125,10 @@ public class BugAI : MonoBehaviour
     private IEnumerator RandomMovement()
     {
         randomActive = true;
-        float randomOffset = Random.Range(-4, 4);
-        randomPosition = gameObject.transform.position + transform.forward * 2 + transform.right * randomOffset;
+        float randomOffset = Random.Range(-3, 3);
+        randomPosition = gameObject.transform.position + transform.forward * 5 + transform.right * randomOffset;
         agent.SetDestination(randomPosition);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(8);
         randomActive = false;
         agent.SetDestination(target.transform.position);
     }
@@ -165,7 +165,7 @@ public class BugAI : MonoBehaviour
             render.material = hitMaterial;
         }
         
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         foreach(Renderer render in renderers)
         {
