@@ -29,6 +29,9 @@ public class HighScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Delete high score. Comment when not needed. Call it when clicking on game reset button
+        //PlayerPrefs.DeleteKey("Highscore");
+
         player = FindObjectOfType<NewBehaviourScript>();
 
         //Check if there is already a high score at the start of game
@@ -46,6 +49,7 @@ public class HighScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Highscore = PlayerPrefs.GetFloat("Highscore");
         HighScoreText.text = "High Score: " + Highscore.ToString();
         ScoreText.text = "Score: " + Score.ToString();
         Health.text = "Health: " + Healthpoint.ToString();  
@@ -57,6 +61,7 @@ public class HighScore : MonoBehaviour
         //}
         if (Healthpoint <= 0 && !isDead) 
         {
+            Highscore = PlayerPrefs.GetFloat("Highscore");
             SaveHighScore();
             //Activate player death, only enabled once 
             isDead = true;
