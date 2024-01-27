@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8044992564819447391}
   - component: {fileID: 5786578058071992213}
   - component: {fileID: 7362717555692289283}
+  - component: {fileID: 1897938771323966200}
   m_Layer: 6
   m_Name: Bug1
   m_TagString: Untagged
@@ -101,6 +102,7 @@ MonoBehaviour:
   - {fileID: 472304962486729640}
   hitMaterial: {fileID: 2100000, guid: 6ba6025abbc4b2e4f80159b84558ab32, type: 2}
   originalMaterial: {fileID: 2100000, guid: 9dd4904f43d9f454f8a981e081d8ec0f, type: 2}
+  snailDamange: []
 --- !u!120 &5786578058071992213
 LineRenderer:
   serializedVersion: 2
@@ -233,6 +235,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1897938771323966200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3162040407092897903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bbbdcadf6f01a14ca7ac4dac6480996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
 --- !u!1001 &7382098231756677356
 PrefabInstance:
   m_ObjectHideFlags: 0
