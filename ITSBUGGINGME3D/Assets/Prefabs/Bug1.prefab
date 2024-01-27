@@ -44,16 +44,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 3162040407092897903}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
-  m_Speed: 8
+  m_Radius: 0.5
+  m_Speed: 3.5
   m_Acceleration: 8
-  avoidancePriority: 99
+  avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1
+  m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 5784733740676404383, guid: 45607d21f5f44c648b125b23e1c6d805, type: 3}
-  target: {fileID: 8899984390155911487, guid: b80c8cca0fd1b6d42ad7b48aa7aee5b8, type: 3}
+  target: {fileID: 6275609292654993684, guid: b80c8cca0fd1b6d42ad7b48aa7aee5b8, type: 3}
   bug: 2
   greenSplats:
   - {fileID: 7312215651010295926, guid: f4d53c9c59386ac47bbae429416c51a3, type: 3}
