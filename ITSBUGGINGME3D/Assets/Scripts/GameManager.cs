@@ -175,6 +175,7 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        timerText.gameObject.SetActive(true);
         Time.timeScale = 1;
     }
 
@@ -190,7 +191,7 @@ public class GameManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         gameOverMenu.SetActive(true);
-        //timerText.gameObject.SetActive(false);
+        timerText.gameObject.SetActive(false);
         gamePauseMenu = null;
     }
 
