@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4927863181374355143}
   - component: {fileID: 8044992564819447391}
   - component: {fileID: 5786578058071992213}
+  - component: {fileID: 7362717555692289283}
   m_Layer: 6
   m_Name: Bug1
   m_TagString: Untagged
@@ -195,6 +196,27 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!65 &7362717555692289283
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3162040407092897903}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7382098231756677356
 PrefabInstance:
   m_ObjectHideFlags: 0

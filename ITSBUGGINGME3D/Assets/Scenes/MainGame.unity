@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!198 &101382207 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3765238288124176548, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 337021606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &144690005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304,6 +310,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &337021606
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2594243613420095301, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Click Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765238288124176548, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151981602405228040, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.1775646
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151981602405228040, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.9148216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151981602405228040, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6148748
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151981602405228040, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151981602405228040, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151981602405228040, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151981602405228040, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151981602405228040, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151981602405228040, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151981602405228040, guid: 8a74cfdd1808ff445bc05bab6bc410e1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a74cfdd1808ff445bc05bab6bc410e1, type: 3}
 --- !u!1 &373230822
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +466,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   livescore: {fileID: 2042964846}
-  clickEffect: {fileID: 0}
+  clickEffect: {fileID: 101382207}
   clickableLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -1546,3 +1625,4 @@ SceneRoots:
   - {fileID: 144690005}
   - {fileID: 1464215979}
   - {fileID: 1909526413}
+  - {fileID: 337021606}
