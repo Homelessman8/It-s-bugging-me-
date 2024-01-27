@@ -40,8 +40,8 @@ public class NewBehaviourScript : MonoBehaviour
 
                 //Debug.Log(hit.collider.name);
                 //Destroy game object 
-                Destroy(hit.transform.gameObject);
-                
+                //Destroy(hit.transform.gameObject);
+                hit.transform.GetComponent<BugAI>().GetHit();
                 livescore.Score++;
 
             }

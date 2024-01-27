@@ -18,7 +18,7 @@ public class BugSpawner : MonoBehaviour
     {
         while(true)
         {
-            Instantiate(bugs[Random.Range(0, 2)], transform.position, transform.rotation);
+            Instantiate(bugs[Random.Range(0, 4)], transform.position, transform.rotation);
             yield return new WaitForSeconds(spawnRate);
         }
     }

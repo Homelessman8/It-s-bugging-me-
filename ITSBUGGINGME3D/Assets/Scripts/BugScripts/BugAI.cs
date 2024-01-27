@@ -5,6 +5,7 @@ using Unity.AI;
 using UnityEngine.AI;
 using System.IO;
 using Unity.VisualScripting;
+using UnityEngine.Rendering.Universal;
 
 public enum bugType
 {
@@ -22,6 +23,7 @@ public class BugAI : MonoBehaviour
     //Where we want the AI to go
     Transform target;
     Vector3 randomPosition;
+    int lives = 1;
     public bugType bug;
     private List<int> validNumbers = new List<int> { 1, 4, 8,};
     [SerializeField]
@@ -30,7 +32,10 @@ public class BugAI : MonoBehaviour
     GameObject[] yellowSplats;
     [SerializeField]
     GameObject[] orangeSplats;
-
+    [SerializeField]Renderer[] renderers;
+    [SerializeField]
+    Material hitMaterial, originalMaterial;
+    [SerializeField]GameObject[] snailDamange;
 
     bool randomActive;
     //Set the nav agent component
@@ -42,6 +47,22 @@ public class BugAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(target.transform.position);
         StartCoroutine(RandomMovement());
+
+        //Set life amount based on Bug Type
+        switch(bug)
+        {
+            case bugType.Cockcroah:
+            lives = 1;
+            break;
+
+            case bugType.Spider:
+            lives = 2;
+            break;
+
+            case bugType.Snail:
+            lives = 5;
+            break;
+        }
     }
 
     //Update is called once per frame
@@ -112,6 +133,13 @@ public class BugAI : MonoBehaviour
         agent.SetDestination(target.transform.position);
     }
 
+        public void GetHit()
+    {
+        Debug.Log("BUG HIT!");
+        lives -= 1;
+        StartCoroutine(Flash());        
+    }
+
     void OnDestroy()
     {
         switch(bug)
@@ -128,6 +156,48 @@ public class BugAI : MonoBehaviour
             Instantiate(yellowSplats[Random.Range(0, 1)], transform.position + transform.up * 0.1f, transform.rotation);
             break;
         }
+    }
 
+    private IEnumerator Flash()
+    {
+        foreach(Renderer render in renderers)
+        {
+            render.material = hitMaterial;
+        }
+        
+        yield return new WaitForSeconds(0.2f);
+
+        foreach(Renderer render in renderers)
+        {
+            if(bug == bugType.Snail)
+            {
+            if(lives == 4)
+            {
+                snailDamange[1].SetActive(true);
+                snailDamange[0].SetActive(false);
+            }
+            if(lives == 3)
+            {
+                snailDamange[2].SetActive(true);
+                snailDamange[1].SetActive(false);
+            }
+            if(lives == 2)
+            {
+                snailDamange[3].SetActive(true);
+                snailDamange[2].SetActive(false);
+            }
+            if(lives == 1)
+            {
+                snailDamange[4].SetActive(true);
+                snailDamange[3].SetActive(false);
+            }
+        }
+            render.material = originalMaterial;
+        }
+        
+        if(lives == 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
