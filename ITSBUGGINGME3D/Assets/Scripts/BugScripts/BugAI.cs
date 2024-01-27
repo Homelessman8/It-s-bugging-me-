@@ -34,6 +34,11 @@ public class BugAI : MonoBehaviour
             Destroy(this.gameObject);
             //Decrease health point by 1
             health.Healthpoint = health.Healthpoint - 1;
+            //Prevent health from going below zero
+            if (health.Healthpoint < 0) 
+            {
+                health.Healthpoint = 0;
+            }
         }
     }
     

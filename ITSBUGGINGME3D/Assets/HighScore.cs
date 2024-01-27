@@ -7,8 +7,10 @@ public class HighScore : MonoBehaviour
 {
 
     //reference player script that is attached to the Main camera
-    //PLACEHOLDER name of script 
     private NewBehaviourScript player;
+
+    //Referencing the Game manager script 
+    public GameManagerScript gameManager;
 
     //Reference to the text
     public TextMeshProUGUI ScoreText;
@@ -20,6 +22,9 @@ public class HighScore : MonoBehaviour
     //player health
     public TextMeshProUGUI Health;
     public float Healthpoint;
+
+    //State of the player 
+    private bool isDead;
 
     // Start is called before the first frame update
     void Start()
@@ -50,9 +55,13 @@ public class HighScore : MonoBehaviour
         //{
         //    SaveHighScore();
         //}
-        if (Healthpoint <= 0) 
+        if (Healthpoint <= 0 && !isDead) 
         {
             SaveHighScore();
+            //Activate player death, only enabled once 
+            isDead = true;
+            //Then transition to GAME OVER scene
+            gameManager.gameOver();
         }
 
     }

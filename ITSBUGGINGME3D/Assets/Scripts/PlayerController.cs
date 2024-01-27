@@ -24,6 +24,7 @@ public class NewBehaviourScript : MonoBehaviour
                 //Debug.Log(hit.collider.name);
                 //Destroy game object 
                 Destroy(hit.transform.gameObject);
+                
                 livescore.Score++;
 
             }
