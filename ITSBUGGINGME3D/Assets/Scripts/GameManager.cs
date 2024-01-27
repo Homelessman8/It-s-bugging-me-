@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Entities")]
     [SerializeField] private GameObject enemyPrefab0;
     [SerializeField] private GameObject enemyPrefab1;
-    //[SerializeField] private GameObject enemyPrefab2;
+    [SerializeField] private GameObject enemyPrefab2;
     [SerializeField] private Transform[] spawnPositions;
 
 
@@ -125,9 +125,9 @@ public class GameManager : MonoBehaviour
         bug.transform.position = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length)].position;
 
 
-        ////another bug
-        //bug = Instantiate(enemyPrefab2);
-        //bug.transform.position = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length)].position;
+        //another bug
+        bug = Instantiate(enemyPrefab2);
+        bug.transform.position = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length)].position;
     }
 
     private void Update()

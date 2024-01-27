@@ -46,7 +46,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -72,30 +72,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 5784733740676404383, guid: 45607d21f5f44c648b125b23e1c6d805, type: 3}
   target: {fileID: 8899984390155911487, guid: b80c8cca0fd1b6d42ad7b48aa7aee5b8, type: 3}
-  rotationLength:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  bug: 0
+  greenSplats: []
+  yellowSplats: []
+  orangeSplats: []
 --- !u!120 &2419714006358123709
 LineRenderer:
   serializedVersion: 2

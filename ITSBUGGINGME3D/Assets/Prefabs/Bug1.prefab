@@ -69,7 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ab43d14b670fb47aff80032a303e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  health: {fileID: 5784733740676404383, guid: 45607d21f5f44c648b125b23e1c6d805, type: 3}
+  target: {fileID: 8899984390155911487, guid: b80c8cca0fd1b6d42ad7b48aa7aee5b8, type: 3}
   bug: 2
   greenSplats:
   - {fileID: 7312215651010295926, guid: f4d53c9c59386ac47bbae429416c51a3, type: 3}

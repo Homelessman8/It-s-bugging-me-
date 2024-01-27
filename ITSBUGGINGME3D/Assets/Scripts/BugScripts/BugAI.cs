@@ -15,6 +15,10 @@ public enum bugType
 
 public class BugAI : MonoBehaviour
 {
+
+    //Reference HighScore script
+    public HighScore health;
+
     NavMeshAgent agent;
     [SerializeField]
     //Where we want the AI to go
@@ -35,6 +39,7 @@ public class BugAI : MonoBehaviour
     //Set the end position as destinatino (it will start to move there)
     void Start()
     {
+        health = GameObject.Find("ScoreManager").GetComponent<HighScore>();
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(target.transform.position);
         StartCoroutine(RandomMovement());
@@ -52,6 +57,19 @@ public class BugAI : MonoBehaviour
         {
             randomActive = false;
             agent.SetDestination(target.transform.position);
+        }
+
+        //When AI is stopped, destroy self.
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            Destroy(this.gameObject);
+            //Decrease health point by 1
+            health.Healthpoint = health.Healthpoint - 1;
+            //Prevent health from going below zero
+            if (health.Healthpoint < 0)
+            {
+                health.Healthpoint = 0;
+            }
         }
     }
 

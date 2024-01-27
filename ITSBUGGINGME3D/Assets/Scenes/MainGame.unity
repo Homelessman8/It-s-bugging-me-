@@ -190,13 +190,19 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyPrefab0
       value: 
-      objectReference: {fileID: 2797256174523637077, guid: 9f5f62fe05ea7de4aa8074c2fff44f6b,
+      objectReference: {fileID: 3162040407092897903, guid: 099862ed41ea33e4db14268215d93e46,
         type: 3}
     - target: {fileID: 3197602496359203004, guid: b196a6f9416b59843b0be26d2a28175a,
         type: 3}
       propertyPath: enemyPrefab1
       value: 
-      objectReference: {fileID: 8197781813116867185, guid: 18c36402ee303b8429a052e6b8463890,
+      objectReference: {fileID: 4487629995234997904, guid: 6c1a6f5d8765676479d232a5f07fb1cd,
+        type: 3}
+    - target: {fileID: 3197602496359203004, guid: b196a6f9416b59843b0be26d2a28175a,
+        type: 3}
+      propertyPath: enemyPrefab2
+      value: 
+      objectReference: {fileID: 7494737297644408469, guid: 11b409c7f038394489f580f6089a0663,
         type: 3}
     - target: {fileID: 3197602496359203004, guid: b196a6f9416b59843b0be26d2a28175a,
         type: 3}
@@ -381,6 +387,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   livescore: {fileID: 2042964846}
+  clickEffect: {fileID: 0}
+  clickableLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  flashHit: {fileID: 0}
 --- !u!114 &587561628
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -487,6 +487,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bug2
       objectReference: {fileID: 0}
+    - target: {fileID: 4080300771032143066, guid: 9f5f62fe05ea7de4aa8074c2fff44f6b,
+        type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8026007127922617558, guid: 9f5f62fe05ea7de4aa8074c2fff44f6b,
         type: 3}
       propertyPath: m_LocalPosition.x
