@@ -4155,7 +4155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3773f6fda89eeb14482488ca18455c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 2129654605}
+  gameManager: {fileID: 2129654607}
   ScoreText: {fileID: 88003095}
   Score: 0
   HighScoreText: {fileID: 152817907}
@@ -9660,6 +9660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2129654606}
   - component: {fileID: 2129654605}
+  - component: {fileID: 2129654607}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9674,7 +9675,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129654604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 719edfbe279bb7b4abdd8bf21dac2116, type: 3}
   m_Name: 
@@ -9695,6 +9696,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2129654607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129654604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e8798f87d95c34bac8ca2b5235d144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab0: {fileID: 0}
+  enemyPrefab1: {fileID: 0}
+  spawnPositions: []
+  enemySpawnRate: 0
+  currentState: 0
+  bug: {fileID: 662581147}
+  gamePauseMenu: {fileID: 0}
+  gameOverMenu: {fileID: 402510357}
+  timerText: {fileID: 0}
 --- !u!1001 &7587457248602230672
 PrefabInstance:
   m_ObjectHideFlags: 0
