@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e8798f87d95c34bac8ca2b5235d144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 919132149155446097, guid: d1caa3ba11108e14da83acf1650ba855,
+  enemyPrefab: {fileID: 2797256174523637077, guid: 9f5f62fe05ea7de4aa8074c2fff44f6b,
     type: 3}
   spawnPositions:
   - {fileID: 357696735}
@@ -1247,7 +1247,7 @@ MonoBehaviour:
   - {fileID: 1578560802}
   enemySpawnRate: 0
   currentState: 0
-  bug: {fileID: 919132149155446097, guid: d1caa3ba11108e14da83acf1650ba855, type: 3}
+  bug: {fileID: 2797256174523637077, guid: 9f5f62fe05ea7de4aa8074c2fff44f6b, type: 3}
   gamePauseMenu: {fileID: 453897688}
   gameOverMenu: {fileID: 492648014}
   timerText: {fileID: 808299104}
