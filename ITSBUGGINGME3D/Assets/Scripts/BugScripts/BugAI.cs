@@ -21,6 +21,7 @@ public class BugAI : MonoBehaviour
     //Set the end position as destinatino (it will start to move there)
     void Start()
     {
+        health = GameObject.Find("ScoreManager").GetComponent<HighScore>();
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(target.transform.position);
     }
