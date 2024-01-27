@@ -3,12 +3,17 @@ guid: d1caa3ba11108e14da83acf1650ba855
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bug1_m
+    second: {fileID: 2100000, guid: 9dd4904f43d9f454f8a981e081d8ec0f, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -33,7 +38,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Scene
+      name: Bug1_Walk
       takeName: Scene
       internalID: -623603649343465320
       firstFrame: 1
