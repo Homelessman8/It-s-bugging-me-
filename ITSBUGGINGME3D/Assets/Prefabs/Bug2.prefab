@@ -69,32 +69,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ab43d14b670fb47aff80032a303e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
   target: {fileID: 0}
-  rotationLength:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  bug: 0
+  greenSplats:
+  - {fileID: 7312215651010295926, guid: f4d53c9c59386ac47bbae429416c51a3, type: 3}
+  - {fileID: 8381877245281215944, guid: b4ed36c204d89f34aab0256946af2093, type: 3}
+  - {fileID: 3618685430617039762, guid: d97c0d86bdd056041a81120145d44b11, type: 3}
+  yellowSplats:
+  - {fileID: 3618685430617039762, guid: 184069395bd51e846865f04b8787c31c, type: 3}
+  - {fileID: 3618685430617039762, guid: 5d9e423195d8cf04eb577f234043f2ef, type: 3}
+  - {fileID: 3618685430617039762, guid: a7441f96531c9804c88919eee62cef5e, type: 3}
+  orangeSplats:
+  - {fileID: 3618685430617039762, guid: 2e70ac79eee9b6d4193b5e2efd21420b, type: 3}
+  - {fileID: 3618685430617039762, guid: 13c15537a47594c47aa9f7d59bfd6118, type: 3}
+  - {fileID: 3618685430617039762, guid: d59341ff086c3b1458182f15dace2175, type: 3}
 --- !u!120 &2160902362918200527
 LineRenderer:
   serializedVersion: 2
