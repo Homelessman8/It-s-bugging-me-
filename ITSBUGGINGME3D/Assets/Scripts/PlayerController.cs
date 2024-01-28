@@ -1,3 +1,6 @@
+// using one sound for all bugs
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +24,9 @@ public class NewBehaviourScript : MonoBehaviour
     // Reference to the audio clip
     [SerializeField] AudioClip destroySound;
 
+    // Array to hold the audio clips
+    public AudioClip[] destroySounds;
+
     // Reference to the AudioSource component
     private AudioSource audioSource;
 
@@ -36,7 +42,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
         // Assign the audio clip to the AudioSource component
-        audioSource.clip = destroySound;
+        //audioSource.clip = destroySound;
     }
 
     private void Update()
@@ -66,8 +72,11 @@ public class NewBehaviourScript : MonoBehaviour
                 livescore.Score++;
 
                 // Play the destroy sound
-                if (destroySound != null && audioSource != null)
+                if (destroySounds.Length > 0)
                 {
+                    // Randomly select one of the audio clips from the array
+                    int randomIndex = Random.Range(0, destroySounds.Length);
+                    audioSource.clip = destroySounds[randomIndex];
                     audioSource.Play();
                 }
             }
