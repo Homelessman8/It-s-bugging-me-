@@ -491,6 +491,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   flashHit: {fileID: 0}
+  destroySound: {fileID: 8300000, guid: c60b8e8ffd5fcf4469ae8957001c76e4, type: 3}
 --- !u!114 &587561628
 MonoBehaviour:
   m_ObjectHideFlags: 0

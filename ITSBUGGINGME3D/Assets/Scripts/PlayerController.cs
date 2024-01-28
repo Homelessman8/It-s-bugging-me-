@@ -18,10 +18,31 @@ public class NewBehaviourScript : MonoBehaviour
     //Reference the damage flash
     public DamageFlash flashHit;
 
+    // Reference to the audio clip
+    [SerializeField] AudioClip destroySound;
+
+    // Reference to the AudioSource component
+    private AudioSource audioSource;
+
+    // Initialize the AudioSource component
+    private void Start()
+    {
+        // Get the AudioSource component attached to this GameObject
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            // If AudioSource component is not attached, add it
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        // Assign the audio clip to the AudioSource component
+        audioSource.clip = destroySound;
+    }
+
     private void Update()
     {
-       //Check if left mouse button is pressed and ask EventSystems if the cursor is over a UI object
-       if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        //Check if left mouse button is pressed and ask EventSystems if the cursor is over a UI object
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             RaycastHit hit;
             //Use camera to create ray and give it mouse position
@@ -34,7 +55,7 @@ public class NewBehaviourScript : MonoBehaviour
                 {
                     Instantiate(clickEffect, hit.point += new Vector3(0, 0.1f, 0), clickEffect.transform.rotation);
                 }
-                
+
                 //Cause damage flash
                 //refer to damage flash script
 
@@ -44,9 +65,14 @@ public class NewBehaviourScript : MonoBehaviour
                 hit.transform.GetComponent<BugAI>().GetHit();
                 livescore.Score++;
 
+                // Play the destroy sound
+                if (destroySound != null && audioSource != null)
+                {
+                    audioSource.Play();
+                }
             }
-            
+
         }
     }
-   
+
 }
