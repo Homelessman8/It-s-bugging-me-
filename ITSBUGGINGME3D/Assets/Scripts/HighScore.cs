@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using TMPro;
 
 public class HighScore : MonoBehaviour
 {
+
+    //Variable for Health sprites
+    public int healthS;
+    public int numOfHearts;
+
+    public Image[] hearts;
+    public Sprite fullheart;
+    public Sprite emptyheart;
+
 
     //reference player script that is attached to the Main camera
     private NewBehaviourScript player;

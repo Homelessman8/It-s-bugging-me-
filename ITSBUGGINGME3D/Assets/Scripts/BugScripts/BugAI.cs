@@ -47,10 +47,12 @@ public class BugAI : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
+        //Sprite Health bar here
         //When AI is stopped, destroy self.
         if(agent.remainingDistance <= agent.stoppingDistance && !randomActive)
         {
             health.Healthpoint = health.Healthpoint - 1;
+            
 
             //Prevent health from going below zero
             if (health.Healthpoint < 0)
